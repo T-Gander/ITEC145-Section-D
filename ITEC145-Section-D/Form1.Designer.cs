@@ -43,21 +43,21 @@
             this.dataGridCars.Location = new System.Drawing.Point(12, 99);
             this.dataGridCars.Name = "dataGridCars";
             this.dataGridCars.RowTemplate.Height = 25;
-            this.dataGridCars.Size = new System.Drawing.Size(481, 187);
+            this.dataGridCars.Size = new System.Drawing.Size(668, 187);
             this.dataGridCars.TabIndex = 11;
             // 
             // txtDatagrid
             // 
             this.txtDatagrid.Location = new System.Drawing.Point(287, 71);
             this.txtDatagrid.Name = "txtDatagrid";
-            this.txtDatagrid.Size = new System.Drawing.Size(206, 23);
+            this.txtDatagrid.Size = new System.Drawing.Size(393, 23);
             this.txtDatagrid.TabIndex = 10;
             // 
             // txtFileSelect
             // 
             this.txtFileSelect.Location = new System.Drawing.Point(287, 13);
             this.txtFileSelect.Name = "txtFileSelect";
-            this.txtFileSelect.Size = new System.Drawing.Size(206, 23);
+            this.txtFileSelect.Size = new System.Drawing.Size(393, 23);
             this.txtFileSelect.TabIndex = 9;
             // 
             // btnLoadGrid
