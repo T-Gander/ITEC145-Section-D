@@ -68,6 +68,7 @@
             this.btnLoadGrid.TabIndex = 8;
             this.btnLoadGrid.Text = "Move Data from Struct to Datagrid";
             this.btnLoadGrid.UseVisualStyleBackColor = true;
+            this.btnLoadGrid.Click += new System.EventHandler(this.btnLoadGrid_Click);
             // 
             // btnPeek
             // 

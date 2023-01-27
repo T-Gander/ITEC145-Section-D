@@ -4,8 +4,12 @@ namespace ITEC145_Section_D
     {
         string fileRecords = "";
         List<string> columnNames = new List<string> {"Make", "Model", "Year", "Mileage" };
-        List<string> columnValues = new List<string>();
+        List<string> columnValues = new List<string>();     //Need to change this to a struct
         int columns = 0;
+        struct cars
+        {
+
+        }
         
 
         public Form1()
@@ -15,7 +19,6 @@ namespace ITEC145_Section_D
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-
             dataGridCars.ColumnCount = columnNames.Count;    //Sets and creates the amount of columns that are needed.
             for (int i = 0; i < columns; i++)                //Loop to add each column with the names specified in the columnNames list.
             {
@@ -25,9 +28,9 @@ namespace ITEC145_Section_D
             OpenFileDialog ofd = new OpenFileDialog();
             //ofd.ShowDialog();
             
-            if(ofd.ShowDialog() == DialogResult.OK)                 //If file dialog is successful in selecting a file. Do something.
+            if(ofd.ShowDialog() == DialogResult.OK)                     //If file dialog is successful in selecting a file. Do something.
             {
-                int count = 0;                                      //To keep count of records read.
+                int count = 0;                                          //To keep count of records read.
                 StreamReader reader = new StreamReader(ofd.FileName);
 
                 for(int i = 0; !reader.EndOfStream; i++)
@@ -43,9 +46,10 @@ namespace ITEC145_Section_D
             {
                 MessageBox.Show("Please select a file!");
             }
-            
-            
+        }
 
+        private void btnLoadGrid_Click(object sender, EventArgs e)
+        {
 
         }
     }
