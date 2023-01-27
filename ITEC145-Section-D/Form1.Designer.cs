@@ -1,0 +1,118 @@
+﻿namespace ITEC145_Section_D
+{
+    partial class Form1
+    {
+        /// <summary>
+        ///  Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        ///  Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        ///  Required method for Designer support - do not modify
+        ///  the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.dataGridCars = new System.Windows.Forms.DataGridView();
+            this.txtDatagrid = new System.Windows.Forms.TextBox();
+            this.txtFileSelect = new System.Windows.Forms.TextBox();
+            this.btnLoadGrid = new System.Windows.Forms.Button();
+            this.btnPeek = new System.Windows.Forms.Button();
+            this.btnLoad = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridCars)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // dataGridCars
+            // 
+            this.dataGridCars.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridCars.Location = new System.Drawing.Point(12, 99);
+            this.dataGridCars.Name = "dataGridCars";
+            this.dataGridCars.RowTemplate.Height = 25;
+            this.dataGridCars.Size = new System.Drawing.Size(481, 187);
+            this.dataGridCars.TabIndex = 11;
+            // 
+            // txtDatagrid
+            // 
+            this.txtDatagrid.Location = new System.Drawing.Point(287, 71);
+            this.txtDatagrid.Name = "txtDatagrid";
+            this.txtDatagrid.Size = new System.Drawing.Size(206, 23);
+            this.txtDatagrid.TabIndex = 10;
+            // 
+            // txtFileSelect
+            // 
+            this.txtFileSelect.Location = new System.Drawing.Point(287, 13);
+            this.txtFileSelect.Name = "txtFileSelect";
+            this.txtFileSelect.Size = new System.Drawing.Size(206, 23);
+            this.txtFileSelect.TabIndex = 9;
+            // 
+            // btnLoadGrid
+            // 
+            this.btnLoadGrid.Location = new System.Drawing.Point(12, 70);
+            this.btnLoadGrid.Name = "btnLoadGrid";
+            this.btnLoadGrid.Size = new System.Drawing.Size(269, 23);
+            this.btnLoadGrid.TabIndex = 8;
+            this.btnLoadGrid.Text = "Move Data from Struct to Datagrid";
+            this.btnLoadGrid.UseVisualStyleBackColor = true;
+            // 
+            // btnPeek
+            // 
+            this.btnPeek.Location = new System.Drawing.Point(12, 41);
+            this.btnPeek.Name = "btnPeek";
+            this.btnPeek.Size = new System.Drawing.Size(269, 23);
+            this.btnPeek.TabIndex = 7;
+            this.btnPeek.Text = "Peek Inside Structure List?";
+            this.btnPeek.UseVisualStyleBackColor = true;
+            // 
+            // btnLoad
+            // 
+            this.btnLoad.Location = new System.Drawing.Point(12, 12);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(269, 23);
+            this.btnLoad.TabIndex = 6;
+            this.btnLoad.Text = "File Select for Data Struct";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridCars);
+            this.Controls.Add(this.txtDatagrid);
+            this.Controls.Add(this.txtFileSelect);
+            this.Controls.Add(this.btnLoadGrid);
+            this.Controls.Add(this.btnPeek);
+            this.Controls.Add(this.btnLoad);
+            this.Name = "Form1";
+            this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridCars)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private DataGridView dataGridCars;
+        private TextBox txtDatagrid;
+        private TextBox txtFileSelect;
+        private Button btnLoadGrid;
+        private Button btnPeek;
+        private Button btnLoad;
+    }
+}
