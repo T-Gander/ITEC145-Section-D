@@ -86,6 +86,7 @@
             this.btnLoad.TabIndex = 6;
             this.btnLoad.Text = "File Select for Data Struct";
             this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // Form1
             // 
