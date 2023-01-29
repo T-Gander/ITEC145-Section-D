@@ -34,6 +34,9 @@
             this.btnLoadGrid = new System.Windows.Forms.Button();
             this.btnPeek = new System.Windows.Forms.Button();
             this.btnLoad = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.txtFilename = new System.Windows.Forms.TextBox();
+            this.lblFilename = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCars)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,11 +92,40 @@
             this.btnLoad.UseVisualStyleBackColor = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(688, 304);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(100, 74);
+            this.btnSave.TabIndex = 12;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // txtFilename
+            // 
+            this.txtFilename.Location = new System.Drawing.Point(688, 275);
+            this.txtFilename.Name = "txtFilename";
+            this.txtFilename.Size = new System.Drawing.Size(164, 23);
+            this.txtFilename.TabIndex = 13;
+            // 
+            // lblFilename
+            // 
+            this.lblFilename.AutoSize = true;
+            this.lblFilename.Location = new System.Drawing.Point(688, 257);
+            this.lblFilename.Name = "lblFilename";
+            this.lblFilename.Size = new System.Drawing.Size(88, 15);
+            this.lblFilename.TabIndex = 14;
+            this.lblFilename.Text = "Name your file:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(880, 450);
+            this.Controls.Add(this.lblFilename);
+            this.Controls.Add(this.txtFilename);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.dataGridCars);
             this.Controls.Add(this.txtDatagrid);
             this.Controls.Add(this.txtFileSelect);
@@ -116,5 +148,8 @@
         private Button btnLoadGrid;
         private Button btnPeek;
         private Button btnLoad;
+        private Button btnSave;
+        private TextBox txtFilename;
+        private Label lblFilename;
     }
 }
