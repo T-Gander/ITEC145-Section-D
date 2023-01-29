@@ -43,7 +43,7 @@
             this.dataGridCars.Location = new System.Drawing.Point(12, 99);
             this.dataGridCars.Name = "dataGridCars";
             this.dataGridCars.RowTemplate.Height = 25;
-            this.dataGridCars.Size = new System.Drawing.Size(668, 187);
+            this.dataGridCars.Size = new System.Drawing.Size(668, 315);
             this.dataGridCars.TabIndex = 11;
             // 
             // txtDatagrid

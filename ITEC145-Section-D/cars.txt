@@ -1,0 +1,10 @@
+Chevrolet,Corvette,2009,7200
+Ford,F150,2012,84000
+Toyota,Prius,2004,100000
+Tesla,Model S,2020,0
+Hyundai,Accent,2003,220000
+Ford,Ka,2000,150000
+Ford,Escape,2014,80000
+Jeep,Cherokee,1998,220000
+Saturn,SC1,2000,200000
+Toyota,Camry,1998,280000
