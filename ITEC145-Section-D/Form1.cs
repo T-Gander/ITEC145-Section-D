@@ -17,7 +17,7 @@ namespace ITEC145_Section_D
             public string Make;
             public string Model;
             public int Year;
-            public int Mileage;
+            public double Mileage;
         }
         
 
@@ -50,7 +50,7 @@ namespace ITEC145_Section_D
                     carList.Make = words[0];                    
                     carList.Model = words[1];                    
                     carList.Year = int.Parse(words[2]);        
-                    carList.Mileage = int.Parse(words[3]);
+                    carList.Mileage = double.Parse(words[3]);
 
                     allCars.Add(carList);
                     count++;
