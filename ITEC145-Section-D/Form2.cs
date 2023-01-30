@@ -23,21 +23,28 @@ namespace ITEC145_Section_D
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            Form1 frm1 = (Form1)Application.OpenForms[0];               //Searches for open Form1 forms (there should only be one) and assigns it to the form variable frm1.
-
-            dataGridView1.ColumnCount = frm1.columnNames.Count;               //Sets the column count based on Form1's columns.
-            for (int i = 0; i < dataGridView1.ColumnCount; i++)          //Loop to add each column with the names specified in the Form1 columnNames list.
+            try
             {
-                dataGridView1.Columns[i].HeaderText = frm1.columnNames[i];    //Copied from Form 1 with minor changes.
+                Form1 frm1 = (Form1)Application.OpenForms[0];               //Searches for open Form1 forms (there should only be one) and assigns it to the form variable frm1.
+
+                dataGridView1.ColumnCount = frm1.columnNames.Count;               //Sets the column count based on Form1's columns.
+                for (int i = 0; i < dataGridView1.ColumnCount; i++)          //Loop to add each column with the names specified in the Form1 columnNames list.
+                {
+                    dataGridView1.Columns[i].HeaderText = frm1.columnNames[i];    //Copied from Form 1 with minor changes.
+                }
+
+                for (int i = 0 + frm1.actualRowCount; i < frm1.allCars.Count + frm1.actualRowCount; i++)
+                {
+                    dataGridView1.Rows.Add();
+                    dataGridView1.Rows[i].Cells[0].Value = frm1.allCars[i - frm1.actualRowCount].Make;         //Copied from Form1.
+                    dataGridView1.Rows[i].Cells[1].Value = frm1.allCars[i - frm1.actualRowCount].Model;        //Also had to change a few variables in Form1 to public.
+                    dataGridView1.Rows[i].Cells[2].Value = frm1.allCars[i - frm1.actualRowCount].Year;         
+                    dataGridView1.Rows[i].Cells[3].Value = frm1.allCars[i - frm1.actualRowCount].Mileage;
+                }
             }
-
-            for (int i = 0 + frm1.actualRowCount; i < frm1.allCars.Count + frm1.actualRowCount; i++)
+            catch(Exception ex)
             {
-                dataGridView1.Rows.Add();
-                dataGridView1.Rows[i].Cells[0].Value = frm1.allCars[i - frm1.actualRowCount].Make;         //Copied from Form1.
-                dataGridView1.Rows[i].Cells[1].Value = frm1.allCars[i - frm1.actualRowCount].Model;        //Also had to change a few variables in Form1 to public.
-                dataGridView1.Rows[i].Cells[2].Value = frm1.allCars[i - frm1.actualRowCount].Year;         
-                dataGridView1.Rows[i].Cells[3].Value = frm1.allCars[i - frm1.actualRowCount].Mileage;
+                MessageBox.Show(ex.Message);    //If something happens
             }
 
         }

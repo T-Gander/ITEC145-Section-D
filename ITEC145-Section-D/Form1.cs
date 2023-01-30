@@ -84,7 +84,7 @@ namespace ITEC145_Section_D
         {
             try
             {
-                int yearCount = 0;
+                int yearCount = 0;                  //Used essentialy like a bool (should probably change it to a bool) to intialise a value to show a message when a cars year is likely incorrect.
                 string filename = txtFilename.Text;
 
                 if(filename == "")
