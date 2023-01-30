@@ -4,12 +4,11 @@ namespace ITEC145_Section_D
 {
     public partial class Form1 : Form
     {
-        string fileRecords = "";
-        List<string> columnNames = new List<string> {"Make", "Model", "Year", "Mileage" };
-        List<cars> allCars = new List<cars>();
-
+        public List<string> columnNames = new List<string> {"Make", "Model", "Year", "Mileage" };
+        public List<cars> allCars = new List<cars>();
+        public int actualRowCount;
         string projectDirectory = Directory.GetCurrentDirectory();      //Got this idea from JJ :D
-    struct cars
+        public struct cars
         {
             public string Make;
             public string Model;
@@ -51,7 +50,7 @@ namespace ITEC145_Section_D
                         count++;
                     }
                     reader.Close();
-                    txtFileSelect.Text = $"{count} records were added to the List";
+                    txtFileSelect.Text = $"{count} records were added to the list of cars";
                 }
                 else
                 {
@@ -66,7 +65,8 @@ namespace ITEC145_Section_D
 
         private void btnLoadGrid_Click(object sender, EventArgs e)
         {
-            int actualRowCount = dataGridCars.RowCount - 1;     //Used to add multiple records to datagrid.
+            int count = 0;
+            actualRowCount = dataGridCars.RowCount - 1;     //Used to add multiple records to datagrid.
 
             for(int i = 0 + actualRowCount; i < allCars.Count + actualRowCount; i++)
             {
@@ -75,14 +75,16 @@ namespace ITEC145_Section_D
                 dataGridCars.Rows[i].Cells[1].Value = allCars[i - actualRowCount].Model;        //to a single global field change
                 dataGridCars.Rows[i].Cells[2].Value = allCars[i - actualRowCount].Year;         //ran out of time to figure this out.
                 dataGridCars.Rows[i].Cells[3].Value = allCars[i - actualRowCount].Mileage;
+                count++;
             }
+            txtDatagrid.Text = $"{count} records added to datagrid.";
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
-                int count = 0;
+                int yearCount = 0;
                 string filename = txtFilename.Text;
 
                 if(filename == "")
@@ -96,18 +98,18 @@ namespace ITEC145_Section_D
 
                     for (int i = 0; i < dataGridCars.RowCount - 1; i++)
                     {
-                        newCars.Make = dataGridCars.Rows[i].Cells[0].Value.ToString();
-                        newCars.Model = dataGridCars.Rows[i].Cells[1].Value.ToString();
+                        newCars.Make = dataGridCars.Rows[i].Cells[0].Value.ToString();                          //Potential to add if statements to chack for numbers within a string,
+                        newCars.Model = dataGridCars.Rows[i].Cells[1].Value.ToString();                         // but I'm too lazy today.
                         newCars.Year = int.Parse(dataGridCars.Rows[i].Cells[2].Value.ToString());
 
-                        if (newCars.Year > DateTime.Now.Year+1)
+                        if (newCars.Year > DateTime.Now.Year+1)                                                 //Error checking of the cars year based on current time as a proof of concept.
                         {
                             MessageBox.Show("You have a car in the datagrid that doesnt exist yet. Filesave operation cancelled.");
-                            throw new Exception();
+                            throw new Exception();  //Used to cancel operation and move to catch statement
                         }
-                        else if(newCars.Year < DateTime.Now.Year - 100 && count < 1)
+                        else if(newCars.Year < DateTime.Now.Year - 100 && yearCount < 1)
                         {
-                            count++;
+                            yearCount++;
                             MessageBox.Show("A car in your datagrid is likely too old to exist, advised to check your data and save again. This will not show again");
                         }
 
@@ -119,7 +121,7 @@ namespace ITEC145_Section_D
 
                     foreach (cars cars in allCars)
                     {
-                        writer.WriteLine(cars.Make + "," + cars.Model + "," + cars.Year + "," + cars.Mileage);
+                        writer.WriteLine(cars.Make + "," + cars.Model + "," + cars.Year + "," + cars.Mileage);  //Assembles all data back together to be stored inside a file
                     }
                     writer.Close();
                     MessageBox.Show($"{filename}.txt saved succesfully!");
@@ -130,6 +132,12 @@ namespace ITEC145_Section_D
                 MessageBox.Show("Something went wrong. Please check that you have saved only integers and doubles in their respective fields (Year and Mileage), and try again. Filesave was cancelled.");
             }
             
+        }
+
+        private void btnPeek_Click(object sender, EventArgs e)
+        {
+            Form2 frm2 = new Form2();       //Creates Form2
+            frm2.ShowDialog();              //Makes Form2 actually appear.
         }
     }
 }

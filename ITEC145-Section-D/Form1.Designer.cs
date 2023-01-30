@@ -81,6 +81,7 @@
             this.btnPeek.TabIndex = 7;
             this.btnPeek.Text = "Peek Inside Structure List?";
             this.btnPeek.UseVisualStyleBackColor = true;
+            this.btnPeek.Click += new System.EventHandler(this.btnPeek_Click);
             // 
             // btnLoad
             // 
@@ -133,7 +134,7 @@
             this.Controls.Add(this.btnPeek);
             this.Controls.Add(this.btnLoad);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Section D";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCars)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -141,8 +142,6 @@
         }
 
         #endregion
-
-        private DataGridView dataGridCars;
         private TextBox txtDatagrid;
         private TextBox txtFileSelect;
         private Button btnLoadGrid;
@@ -151,5 +150,6 @@
         private Button btnSave;
         private TextBox txtFilename;
         private Label lblFilename;
+        public DataGridView dataGridCars;
     }
 }
